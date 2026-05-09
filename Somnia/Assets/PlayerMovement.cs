@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 0.05f;
+    public float moveSpeed = 0.01f;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -52,10 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.velocity = Vector2.Lerp(
-            rb.velocity,
-            new Vector2(moveInput * moveSpeed, rb.velocity.y),
-            0.15f
-        );
+        rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);;
     }
 }
